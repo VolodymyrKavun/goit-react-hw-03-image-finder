@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
   ImageGalleryItemSt,
   ImageGalleryItemImageSt,
@@ -14,6 +16,13 @@ const ImageGalleryItem = ({ id, image, alt, onClick }) => {
       />
     </ImageGalleryItemSt>
   );
+};
+
+ImageGalleryItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default ImageGalleryItem;

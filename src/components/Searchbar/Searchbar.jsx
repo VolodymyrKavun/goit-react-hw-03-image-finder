@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import { FiSearch } from 'react-icons/fi';
 import {
   SearchbarSt,
@@ -54,5 +54,11 @@ class Searchbar extends Component {
     );
   }
 }
+
+Searchbar.propTypes = {
+  query: PropTypes.string,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+};
 
 export default Searchbar;

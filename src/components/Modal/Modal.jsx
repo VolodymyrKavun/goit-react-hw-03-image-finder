@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ModalSt, ModalOverlaySt, BigPhoto } from './Modal.styled';
 import { createPortal } from 'react-dom';
 
@@ -36,5 +37,11 @@ class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  children: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  onClose: PropTypes.func,
+};
 
 export default Modal;
