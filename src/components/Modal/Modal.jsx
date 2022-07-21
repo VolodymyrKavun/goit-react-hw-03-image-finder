@@ -6,20 +6,23 @@ import { createPortal } from 'react-dom';
 const modalRoot = document.querySelector('#modal-root');
 
 class Modal extends Component {
+  // Ставлю слухач на цикл
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
   }
-
+  //  Знімаю слухач з цикла
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyDown);
   }
 
+  // Закривання модального вікна по "Ескейпу"
   handleKeyDown = e => {
     if (e.code === 'Escape') {
       this.props.onClose();
     }
   };
 
+  // Закривання модальноо вікна по кліку на "Бекдроп"
   handleBackdropClick = e => {
     if (e.currentTarget === e.target) {
       this.props.onClose();

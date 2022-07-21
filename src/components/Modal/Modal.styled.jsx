@@ -19,5 +19,5 @@ export const ModalOverlaySt = styled.div`
 `;
 
 export const BigPhoto = styled.img`
-  width: 100%;
+  max-width: 900px;
 `;

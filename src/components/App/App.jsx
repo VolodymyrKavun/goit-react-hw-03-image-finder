@@ -24,6 +24,7 @@ class App extends Component {
     largeImageURL: '',
   };
 
+  // Життєвий цикл для оновлення з перевіркою
   componentDidUpdate = (_, prevState) => {
     const { query, page } = this.state;
     if (prevState.query !== query || prevState.page !== page) {
@@ -31,6 +32,7 @@ class App extends Component {
     }
   };
 
+  // Отримання фото через "Фетч"
   getPhotos = async (query, page) => {
     if (!query) return;
     this.setState({ isLoading: true });
@@ -55,6 +57,7 @@ class App extends Component {
     }
   };
 
+  // Отримання фото на модалку
   getBigPhoto = e => {
     const { images } = this.state;
     const id = e.target.id;
@@ -63,12 +66,14 @@ class App extends Component {
     this.toggleModal();
   };
 
+  // Закривання та відкривання модалки
   toggleModal = () => {
     this.setState(({ showModal }) => ({
       showModal: !showModal,
     }));
   };
 
+  // Скидання до початкового стану при "Сабміті"
   onSubmit = query => {
     this.setState({
       query,
@@ -79,6 +84,7 @@ class App extends Component {
     });
   };
 
+  // Логіка кнопки "Завантажити ще"
   onLoadMore = () => {
     this.setState(prevState => ({
       isVisible: false,

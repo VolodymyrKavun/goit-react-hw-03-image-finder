@@ -13,11 +13,13 @@ class Searchbar extends Component {
     query: '',
   };
 
+  // Запис значення в "Інпут"
   handleInput = e => {
     const { value } = e.currentTarget;
     this.setState({ query: value.toLowerCase().trim() });
   };
 
+  // Ориманння значення при "Сабміті"
   handleSubmit = e => {
     e.preventDefault();
     const { query } = this.state;
@@ -26,6 +28,7 @@ class Searchbar extends Component {
       alert('Ведіт щось в пошук.');
       return;
     }
+    // "Пропси" з "App"
     this.props.onSubmit(query);
     this.setState({ query: '' });
   };
